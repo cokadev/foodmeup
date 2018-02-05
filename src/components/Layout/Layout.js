@@ -2,6 +2,7 @@ import React, { PureComponent } from "react";
 import "antd/dist/antd.css";
 import { Layout as LayoutAntd, Menu } from "antd";
 import styled from "styled-components";
+import { Route, Link } from "react-router-dom";
 import RecipeList from "../RecipeList";
 
 const { Header, Content } = LayoutAntd;
@@ -33,13 +34,15 @@ class Layout extends PureComponent {
             defaultSelectedKeys={["1"]}
             style={{ lineHeight: "64px" }}
           >
-            <Menu.Item key="1">Recettes</Menu.Item>
+            <Menu.Item key="1">
+              <Link to="/">Recettes</Link>
+            </Menu.Item>
             <Menu.Item key="2">Ingrédients</Menu.Item>
           </Menu>
         </Header>
         <ContentStyled>
           <RoutingContent>
-            <RecipeList />
+            <Route exact path="/" component={RecipeList} />
           </RoutingContent>
         </ContentStyled>
       </LayoutAntdStyled>

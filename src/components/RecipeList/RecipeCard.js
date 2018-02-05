@@ -7,7 +7,12 @@ const RecipeCard = ({ recipe }) => {
     <Card
       hoverable
       style={{ width: 240 }}
-      cover={<img alt="example" src={recipe.fields.picture.fields.file.url} />}
+      cover={
+        <img
+          alt={recipe.fields.name}
+          src={recipe.fields.picture.fields.file.url}
+        />
+      }
     >
       <Meta title={recipe.fields.name} />
     </Card>
