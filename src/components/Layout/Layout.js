@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import "antd/dist/antd.css";
 import { Layout as LayoutAntd, Menu } from "antd";
 import styled from "styled-components";
-import { Route, Link } from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
 import RecipeList from "../RecipeList";
 import Recipe from "../Recipe";
 
@@ -43,8 +43,10 @@ class Layout extends PureComponent {
         </Header>
         <ContentStyled>
           <RoutingContent>
-            <Route exact path="/" component={RecipeList} />
-            <Route path="/recipe/:id" component={Recipe} />
+            <Switch>
+              <Route path="/recipe/:id" component={Recipe} />
+              <Route path="/" component={RecipeList} />
+            </Switch>
           </RoutingContent>
         </ContentStyled>
       </LayoutAntdStyled>

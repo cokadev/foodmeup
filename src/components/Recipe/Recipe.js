@@ -2,6 +2,7 @@ import React, { PureComponent, Fragment } from "react";
 import { Spin } from "antd";
 import { Row, Col, Card } from "antd";
 import styled from "styled-components";
+import IngredientListOfRecipe from "./IngredientListOfRecipe";
 
 const ColMarginLef = styled(Col)`
   margin-left: 20px;
@@ -24,7 +25,7 @@ class Recipe extends PureComponent {
 
     return (
       <Fragment>
-        <Row type="flex" justify="start">
+        <Row type="flex" justify="space-around">
           <Col span={6}>
             <Card
               cover={
@@ -35,9 +36,12 @@ class Recipe extends PureComponent {
               }
             />
           </Col>
-          <ColMarginLef span={12}>
+          <Col span={17}>
             <RecipeName>{recipe.fields.name}</RecipeName>
-          </ColMarginLef>
+            <IngredientListOfRecipe
+              ingredientList={recipe.fields.ingredients}
+            />
+          </Col>
         </Row>
       </Fragment>
     );
