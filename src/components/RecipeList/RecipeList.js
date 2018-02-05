@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
 import RecipeCard from "./RecipeCard";
+import { Link } from "react-router-dom";
 
 class RecipeList extends PureComponent {
   componentDidMount() {
@@ -12,7 +13,9 @@ class RecipeList extends PureComponent {
     return (
       <div>
         {recipeList.map(recipe => (
-          <RecipeCard key={recipe.sys.id} recipe={recipe} />
+          <Link to={`/recipe/${recipe.sys.id}`} key={recipe.sys.id}>
+            <RecipeCard key={recipe.sys.id} recipe={recipe} />
+          </Link>
         ))}
       </div>
     );

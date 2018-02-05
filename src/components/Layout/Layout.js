@@ -4,6 +4,7 @@ import { Layout as LayoutAntd, Menu } from "antd";
 import styled from "styled-components";
 import { Route, Link } from "react-router-dom";
 import RecipeList from "../RecipeList";
+import Recipe from "../Recipe";
 
 const { Header, Content } = LayoutAntd;
 
@@ -43,6 +44,7 @@ class Layout extends PureComponent {
         <ContentStyled>
           <RoutingContent>
             <Route exact path="/" component={RecipeList} />
+            <Route path="/recipe/:id" component={Recipe} />
           </RoutingContent>
         </ContentStyled>
       </LayoutAntdStyled>
