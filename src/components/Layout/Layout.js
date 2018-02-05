@@ -1,7 +1,9 @@
 import React, { PureComponent } from "react";
 import "antd/dist/antd.css";
-import { Layout as LayoutAntd, Menu, Breadcrumb } from "antd";
+import { Layout as LayoutAntd, Menu } from "antd";
 import styled from "styled-components";
+import RecipeList from "../RecipeList";
+
 const { Header, Content } = LayoutAntd;
 
 const LayoutAntdStyled = styled(LayoutAntd)`
@@ -36,7 +38,9 @@ class Layout extends PureComponent {
           </Menu>
         </Header>
         <ContentStyled>
-          <RoutingContent>Content</RoutingContent>
+          <RoutingContent>
+            <RecipeList />
+          </RoutingContent>
         </ContentStyled>
       </LayoutAntdStyled>
     );

@@ -1,0 +1,2 @@
+export const GET_RECIPE_LIST_SUCCESS = "recipe/GET_RECIPE_LIST_SUCCESS";
+export const GET_RECIPE_LIST_ERROR = "recipe/GET_RECIPE_LIST_ERROR";
