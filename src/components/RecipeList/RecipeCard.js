@@ -6,7 +6,6 @@ const RecipeCard = ({ recipe }) => {
   return (
     <Card
       hoverable
-      style={{ width: 240 }}
       cover={
         <img
           alt={recipe.fields.name}

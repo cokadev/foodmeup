@@ -4,6 +4,7 @@ import { Layout as LayoutAntd, Menu } from "antd";
 import styled from "styled-components";
 import { Route, Switch, Link } from "react-router-dom";
 import RecipeList from "../RecipeList";
+import IngredientList from "../IngredientList";
 import Recipe from "../Recipe";
 
 const { Header, Content } = LayoutAntd;
@@ -38,13 +39,16 @@ class Layout extends PureComponent {
             <Menu.Item key="1">
               <Link to="/">Recettes</Link>
             </Menu.Item>
-            <Menu.Item key="2">Ingrédients</Menu.Item>
+            <Menu.Item key="2">
+              <Link to="/ingredient">Ingrédients</Link>
+            </Menu.Item>
           </Menu>
         </Header>
         <ContentStyled>
           <RoutingContent>
             <Switch>
               <Route path="/recipe/:id" component={Recipe} />
+              <Route path="/ingredient" component={IngredientList} />
               <Route path="/" component={RecipeList} />
             </Switch>
           </RoutingContent>

@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import RecipeCard from "./RecipeCard";
 import { Link } from "react-router-dom";
+import { Row, Col } from "antd";
 
 class RecipeList extends PureComponent {
   componentDidMount() {
@@ -11,13 +12,15 @@ class RecipeList extends PureComponent {
     const { recipeList } = this.props;
 
     return (
-      <div>
+      <Row type="flex" justify="space-between">
         {recipeList.map(recipe => (
-          <Link to={`/recipe/${recipe.sys.id}`} key={recipe.sys.id}>
-            <RecipeCard key={recipe.sys.id} recipe={recipe} />
-          </Link>
+          <Col span={4} key={recipe.sys.id}>
+            <Link to={`/recipe/${recipe.sys.id}`}>
+              <RecipeCard recipe={recipe} />
+            </Link>
+          </Col>
         ))}
-      </div>
+      </Row>
     );
   }
 }

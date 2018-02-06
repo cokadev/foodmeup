@@ -3,10 +3,9 @@ import { Card, Tag } from "antd";
 
 const IngredientCardOfRecipe = ({ name, quantity, cost, allergenList }) => {
   return (
-    <Card title={name}>
+    <Card title={name} style={{ height: "175px" }}>
       <p>{cost} €</p>
       {allergenList &&
-        allergenList.length > 0 &&
         allergenList.map(allergen => <Tag key={allergen}>{allergen}</Tag>)}
     </Card>
   );

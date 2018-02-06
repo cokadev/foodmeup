@@ -12,7 +12,10 @@ const getRecipe = recipeId => {
           recipeId,
         });
       })
-      .catch(dispatch({ type: GET_RECIPE_ERROR }));
+      .catch(error => {
+        console.error(error);
+        dispatch({ type: GET_RECIPE_ERROR });
+      });
   };
 };
 

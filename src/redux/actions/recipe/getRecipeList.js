@@ -7,11 +7,14 @@ import contentfulClient from "../../../lib/contentfulClient";
 const getRecipeList = () => {
   return dispatch => {
     contentfulClient
-      .getEntries({ content_type: "recipe" })
+      .getEntries({ content_type: "recipe", include: 2 })
       .then(response => {
         dispatch({ type: GET_RECIPE_LIST_SUCCESS, payload: response.items });
       })
-      .catch(dispatch({ type: GET_RECIPE_LIST_ERROR }));
+      .catch(error => {
+        console.error(error);
+        dispatch({ type: GET_RECIPE_LIST_ERROR });
+      });
   };
 };
 

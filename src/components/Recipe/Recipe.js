@@ -4,10 +4,6 @@ import { Row, Col, Card } from "antd";
 import styled from "styled-components";
 import IngredientListOfRecipe from "./IngredientListOfRecipe";
 
-const ColMarginLef = styled(Col)`
-  margin-left: 20px;
-`;
-
 const RecipeName = styled.h1`
   font-size: 48px;
 `;
@@ -19,7 +15,6 @@ class Recipe extends PureComponent {
 
   render() {
     const { recipe } = this.props;
-    console.log(recipe);
 
     if (!recipe) return <Spin />;
 

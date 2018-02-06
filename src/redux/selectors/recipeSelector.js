@@ -7,7 +7,6 @@ const recipeSelector = createSelector(
   [getRecipeList, getRecipeId],
   (recipeList, recipeId) => {
     let recipe = recipeList.find(item => item.sys.id === recipeId);
-
     return recipe;
   },
 );
