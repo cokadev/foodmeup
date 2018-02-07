@@ -11,7 +11,7 @@ class IngredientList extends PureComponent {
     const { ingredientList } = this.props;
 
     return (
-      <Row type="flex" justify="space-between">
+      <Row type="flex" gutter={24}>
         {ingredientList.map(ingredient => (
           <Col span={4} key={ingredient.sys.id}>
             <IngredientCard ingredient={ingredient} />

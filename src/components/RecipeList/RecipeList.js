@@ -12,9 +12,9 @@ class RecipeList extends PureComponent {
     const { recipeList } = this.props;
 
     return (
-      <Row type="flex" justify="space-between">
+      <Row type="flex" gutter={24}>
         {recipeList.map(recipe => (
-          <Col span={4} key={recipe.sys.id}>
+          <Col span={5} key={recipe.sys.id}>
             <Link to={`/recipe/${recipe.sys.id}`}>
               <RecipeCard recipe={recipe} />
             </Link>

@@ -6,7 +6,7 @@ const IngredientListOfRecipe = ({ ingredientList }) => {
   if (!ingredientList) return <Spin />;
 
   return (
-    <Row type="flex" justify="space-between">
+    <Row type="flex" gutter={24}>
       {ingredientList.length > 0 &&
         ingredientList.map(ingredient => (
           <Col span={5} key={ingredient.sys.id}>

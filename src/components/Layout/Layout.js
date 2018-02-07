@@ -14,7 +14,6 @@ const LayoutAntdStyled = styled(LayoutAntd)`
 `;
 
 const RoutingContent = styled.div`
-  background: #fff;
   padding: 24px;
   min-height: 280px;
   margin-top: 20px;
