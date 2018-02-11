@@ -20,7 +20,9 @@ const IngredientCard = ({ ingredient }) => {
       }
     >
       <Meta title={ingredient.fields.name} />
-      <p>{ingredient.fields.cost} €</p>
+      <p>
+        {ingredient.fields.cost}€ / {ingredient.fields.unitCost.fields.name}
+      </p>
       {ingredient.fields.allergen &&
         ingredient.fields.allergen.map(allergen => (
           <Tag key={allergen}>{allergen}</Tag>

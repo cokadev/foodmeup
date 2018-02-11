@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Col, Spin } from "antd";
 import IngredientCardOfRecipe from "./IngredientCardOfRecipe";
+import getIngredientCostOfRecipe from "../../functions/getIngredientCostOfRecipe";
 
 const IngredientListOfRecipe = ({ ingredientList }) => {
   if (!ingredientList) return <Spin />;
@@ -13,7 +14,11 @@ const IngredientListOfRecipe = ({ ingredientList }) => {
             <IngredientCardOfRecipe
               name={ingredient.fields.name}
               quantity={ingredient.fields.quantity}
-              cost={ingredient.fields.ingredient.fields.cost}
+              cost={getIngredientCostOfRecipe(
+                ingredient.fields.ingredient.fields.cost,
+                ingredient.fields.ingredient.fields.unitCost,
+                ingredient.fields.unit
+              )}
               allergenList={ingredient.fields.ingredient.fields.allergen}
             />
           </Col>

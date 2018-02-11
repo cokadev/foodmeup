@@ -4,7 +4,7 @@ import contentfulClient from "../../../lib/contentfulClient";
 const getRecipe = recipeId => {
   return dispatch => {
     contentfulClient
-      .getEntries({ "sys.id": recipeId, include: 2 })
+      .getEntries({ "sys.id": recipeId, include: 10 })
       .then(response => {
         dispatch({
           type: GET_RECIPE_SUCCESS,

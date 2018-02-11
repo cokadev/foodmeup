@@ -7,7 +7,7 @@ import contentfulClient from "../../../lib/contentfulClient";
 const getRecipeList = () => {
   return dispatch => {
     contentfulClient
-      .getEntries({ content_type: "recipe", include: 2 })
+      .getEntries({ content_type: "recipe", include: 10 })
       .then(response => {
         dispatch({ type: GET_RECIPE_LIST_SUCCESS, payload: response.items });
       })
